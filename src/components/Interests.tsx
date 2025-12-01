@@ -1,24 +1,28 @@
 import { motion } from 'motion/react';
+import danceImg from '../assets/dance.jpg';
 
 interface Interest {
   title: string;
   description: string;
   image: string;
   accent: string;
+  link?: string;
 }
 
 const interests: Interest[] = [
+  {
+    title: 'in the studio',
+    description:
+      'i\'ve performed classical and contemporary works worldwide, attended elite intensives, and earning scholarships—including modern/contemporary dance winner for the national foundation for the advancement of artists.',
+    image: danceImg,
+    accent: 'var(--color-accent-blue)',
+    link: 'https://youtu.be/3EAi5mf2prc',
+  },
   {
     title: 'in the kitchen',
     description: 'crafting artisanal breads and pastries—where precision meets creativity in the kitchen.',
     image: 'https://images.unsplash.com/photo-1627308593341-d886acdc06a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnRpc2FuJTIwYmFraW5nJTIwYnJlYWR8ZW58MXx8fHwxNzY0NDYyMjE5fDA&ixlib=rb-4.1.0&q=80&w=1080',
     accent: 'var(--color-accent)',
-  },
-  {
-    title: 'in the studio',
-    description: 'expressing emotion through movement—the art of discipline, grace, and storytelling.',
-    image: 'https://images.unsplash.com/photo-1763069192762-b964eeeb340f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYWxsZXQlMjBkYW5jZXIlMjBzdHVkaW98ZW58MXx8fHwxNzY0NTUyMzUwfDA&ixlib=rb-4.1.0&q=80&w=1080',
-    accent: 'var(--color-accent-blue)',
   },
   {
     title: 'in the world',
@@ -42,22 +46,22 @@ export function Interests() {
         >
           <div className="flex items-center gap-4 mb-6">
             <div className="w-16 h-1 bg-[var(--color-accent)]" />
-            <span className="text-[var(--color-text-secondary)] tracking-wider">BEYOND CODE</span>
+            <span className="text-[var(--color-text-secondary)] tracking-wider">beyond code</span>
           </div>
           <h2 className="text-5xl lg:text-6xl">
             personal passions
           </h2>
           <p className="text-xl text-[var(--color-text-secondary)] mt-6">
-            life is richer when technology meets artistry. here's what fuels my creativity outside of code.
+            life is richer when technology meets artistry. here's what fuels my creativity outside of academics.
           </p>
         </motion.div>
 
         {/* Interests Grid */}
         <div
           className="grid gap-8"
-          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}
+          style={{ gridTemplateColumns: 'repeat(3, minmax(0, 1fr))' }}
         >
-          {interests.map((interest, index) => (
+          {interests.slice(0, 1).map((interest, index) => (
             <motion.div
               key={interest.title}
               initial={{ opacity: 0, y: 40 }}
@@ -72,6 +76,7 @@ export function Interests() {
                   src={interest.image}
                   alt={interest.title}
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
+                  style={{ objectPosition: '50% 35%' }}
                   loading="lazy"
                 />
                 
@@ -85,23 +90,32 @@ export function Interests() {
                 />
                 
                 {/* Content */}
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <motion.div
-                    initial={{ y: 20, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.15 + 0.3 }}
-                  >
-                    <h3
-                      className="text-3xl mb-3 transition-colors duration-300"
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                  <div className="flex items-end justify-between gap-4">
+                    <motion.h3
+                      initial={{ y: 10, opacity: 0 }}
+                      whileInView={{ y: 0, opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.15 + 0.3 }}
+                      className="text-3xl transition-all duration-500 group-hover:-translate-y-4"
                       style={{ color: interest.accent }}
                     >
                       {interest.title}
-                    </h3>
-                    <p className="text-[var(--color-text-secondary)] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      {interest.description}
-                    </p>
-                  </motion.div>
+                    </motion.h3>
+                    {interest.link && (
+                      <a
+                        href={interest.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm uppercase tracking-[0.15em] bg-white/10 px-3 py-1 rounded-full border border-white/20 hover:bg-white/20 transition-colors z-10"
+                      >
+                        watch
+                      </a>
+                    )}
+                  </div>
+                  <p className="text-[var(--color-text-secondary)] opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0 max-w-xl mt-2">
+                    {interest.description}
+                  </p>
                 </div>
 
                 {/* Corner Accent */}

@@ -6,8 +6,9 @@ import resumePdf from '../assets/GraceLi_Resume.pdf';
 const skills = [
   { category: 'languages', items: ['java', 'c/c++', 'python', 'javascript/typescript', 'kotlin', 'sql', 'r', 'bash'] },
   { category: 'web', items: ['react', 'node.js', 'django', 'supabase', 'aws', 'gcp', 'docker'] },
+  { category: 'systems', items: ['mpi/mpich', 'rccl', 'openshmem', 'hpc', 'gpu computing', 'distributed systems'] },
   { category: 'ai/ml', items: ['pytorch', 'tensorflow', 'huggingface', 'sglang', 'prompt engineering'] },
-  { category: 'systems', items: ['mpi/mpich', 'rccl', 'openshmem', 'hpc', 'gpu computing', 'distributed systems', 'git'] },
+  { category: 'tooling & quality', items: ['git', 'ci/cd', 'unit testing', 'integration testing'] },
   { category: 'languages', items: ['english (fluent)', 'mandarin (fluent)'] },
 ];
 
@@ -101,7 +102,7 @@ export function About() {
         >
           <div className="flex items-center gap-4 mb-6">
             <div className="w-16 h-1 bg-[var(--color-accent-blue)]" />
-            <span className="text-[var(--color-text-secondary)] tracking-wider">GET TO KNOW ME</span>
+            <span className="text-[var(--color-text-secondary)] tracking-wider">get to know me</span>
           </div>
           <h2 className="text-5xl lg:text-6xl">
              about
@@ -227,7 +228,10 @@ export function About() {
                 style={{ gridAutoRows: '1fr' }}
               >
                 {skills.map((skillGroup) => (
-                  <div key={skillGroup.category} className="h-full flex flex-col">
+                  <div
+                    key={skillGroup.category}
+                    className={`h-full flex flex-col ${skillGroup.category === 'ai/ml' ? 'pt-4' : ''}`}
+                  >
                     <p className="text-[var(--color-accent)] mb-2">{skillGroup.category}</p>
                     <ul className="text-[var(--color-text-secondary)] text-sm space-y-1">
                       {skillGroup.items.map((item) => (

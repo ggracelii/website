@@ -1,5 +1,7 @@
 import { motion } from 'motion/react';
-import { Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink, FileText, Presentation } from 'lucide-react';
+import reportPdf from '../assets/LiGrace_Paper.pdf';
+import posterPdf from '../assets/LiGrace_Poster.pdf';
 
 interface Project {
   title: string;
@@ -8,16 +10,19 @@ interface Project {
   tags: string[];
   github?: string;
   link?: string;
+  report?: string;
+  poster?: string;
 }
 
 const projects: Project[] = [
   {
-    title: 'GPU-Accelerated HPC Framework',
-    description: 'Optimized distributed computing framework for high-performance GPU clusters using RCCL and custom memory management.',
+    title: 'mpich-rccl integration',
+    description: 'integrated amd\'s rccl into argonne national lab\'s mpich to enable gpu-accelerated mpi collectives and achieved over 60x speedup. code merged into open-source codebase for community adoption. currently conducting large-scale experiments on frontier @ oak ridge national lab to benchmark performance.',
     image: 'https://images.unsplash.com/photo-1639004643331-9526630beb3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncHUlMjBjaXJjdWl0JTIwYm9hcmR8ZW58MXx8fHwxNzY0NTUyMzUxfDA&ixlib=rb-4.1.0&q=80&w=1080',
-    tags: ['HPC', 'GPU', 'RCCL', 'C++'],
-    github: '#',
-    link: '#',
+    tags: [],
+    github: 'https://github.com/pmodels/mpich/pull/7493',
+    report: reportPdf,
+    poster: posterPdf,
   },
   {
     title: 'MPICH Communication Layer',
@@ -67,7 +72,7 @@ export function Portfolio() {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {projects.slice(0, 1).map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 30 }}
@@ -109,7 +114,7 @@ export function Portfolio() {
                 </div>
 
                 {/* Actions */}
-                <div className="flex gap-4">
+                <div className="flex gap-4 flex-wrap items-center">
                   {project.github && (
                     <a
                       href={project.github}
@@ -126,6 +131,26 @@ export function Portfolio() {
                     >
                       <ExternalLink className="w-5 h-5" />
                       <span>live demo</span>
+                    </a>
+                  )}
+                  {project.report && (
+                    <a
+                      href={project.report}
+                      className="flex items-center gap-2 text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors"
+                      download
+                    >
+                      <FileText className="w-5 h-5" />
+                      <span>read report</span>
+                    </a>
+                  )}
+                  {project.poster && (
+                    <a
+                      href={project.poster}
+                      className="flex items-center gap-2 text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors"
+                      download
+                    >
+                      <Presentation className="w-5 h-5" />
+                      <span>view poster</span>
                     </a>
                   )}
                 </div>
