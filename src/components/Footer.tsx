@@ -8,8 +8,8 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Copyright */}
-          <p className="text-[var(--color-text-secondary)] text-sm">
-            © {currentYear} All rights reserved.
+          <p className="text-[var(--color-text-secondary)] text-sm font-body">
+            © {currentYear} all rights reserved.
           </p>
 
           {/* Social Icons */}
@@ -44,9 +44,9 @@ export function Footer() {
           {/* Back to Top */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors text-sm"
+            className="text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors text-sm font-body"
           >
-            Back to Top ↑
+            back to top ↑
           </button>
         </div>
       </div>

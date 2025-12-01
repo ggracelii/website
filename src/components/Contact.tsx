@@ -7,21 +7,30 @@ export function Contact() {
       <div className="absolute top-20 left-10 w-72 h-72 bg-[var(--color-accent)]/5 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-[var(--color-accent-blue)]/5 rounded-full blur-3xl" />
 
-      <div className="max-w-4xl mx-auto px-6 lg:px-12 relative z-10">
+      <div className="max-w-4xl mx-auto px-6 lg:px-12 relative z-30">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center space-y-6"
+          className="text-center space-y-6 relative z-30 pointer-events-auto"
         >
-          <h2 className="text-4xl md:text-5xl font-semibold">reach me at</h2>
-          <a
-            href="mailto:grace.li2@columbia.edu"
-            className="text-2xl md:text-3xl font-light text-[var(--color-accent)] hover:text-[var(--color-accent)]/80 transition-colors"
+          <h2
+            className="font-semibold font-body"
+            style={{ fontSize: 'clamp(1.6rem, 3.5vw, 1.5rem)' }}
           >
-            grace.li2@columbia.edu
-          </a>
+            reach me at
+          </h2>
+          <p className="text-3xl md:text-4xl font-light font-display pointer-events-auto">
+            <a
+              href="mailto:grace.li2@columbia.edu"
+              className="inline-flex items-center gap-2 text-[var(--color-accent)] hover:text-[var(--color-accent)]/80 transition-colors underline decoration-2 underline-offset-4 cursor-pointer pointer-events-auto"
+              style={{ display: 'inline-flex', position: 'relative', zIndex: 50 }}
+              rel="noopener noreferrer"
+            >
+              grace.li2@columbia.edu
+            </a>
+          </p>
         </motion.div>
       </div>
     </section>

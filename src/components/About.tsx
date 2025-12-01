@@ -4,37 +4,40 @@ import headshot from '../assets/GraceLi_Headshot_Extended.PNG';
 import resumePdf from '../assets/GraceLi_Resume.pdf';
 
 const skills = [
-  { category: 'languages', items: ['java', 'c/c++', 'python', 'javascript/typescript', 'kotlin', 'sql', 'r', 'bash'] },
-  { category: 'web', items: ['react', 'node.js', 'django', 'supabase', 'aws', 'gcp', 'docker'] },
-  { category: 'systems', items: ['mpi/mpich', 'rccl', 'openshmem', 'hpc', 'gpu computing', 'distributed systems'] },
+  { category: 'programming languages', items: ['java', 'c/c++', 'python', 'javascript/typescript', 'kotlin', 'sql', 'r', 'bash'] },
+  { category: 'web', items: ['react', 'node.js', 'django', 'supabase', 'aws', 'gcp', 'docker', 'postgresql'] },
+  { category: 'systems', items: ['mpi/mpich', 'rccl', 'openshmem', 'hpc', 'distributed systems'] },
   { category: 'ai/ml', items: ['pytorch', 'tensorflow', 'huggingface', 'sglang', 'prompt engineering'] },
   { category: 'tooling & quality', items: ['git', 'ci/cd', 'unit testing', 'integration testing'] },
-  { category: 'languages', items: ['english (fluent)', 'mandarin (fluent)'] },
+  { category: 'languages', items: ['english (native)', 'chinese (fluent)', 'spanish (conversational)'] },
 ];
 
+const leftSkills = skills.filter((_, index) => index % 2 === 0);
+const rightSkills = skills.filter((_, index) => index % 2 === 1);
+
 const coursework = [
-  'advanced swe (java)',
-  'ai (python)',
-  'advanced programming (c)',
-  'dsa (java)',
-  'computational linguistics (python)',
-  'discrete math',
-  'modern algebra',
-  'ode',
-  'multivariable calc',
-  'linear algebra',
-  'probability',
+  '• advanced swe (java)',
+  '• ai (python)',
+  '• advanced programming (c)',
+  '• dsa (java)',
+  '• computational linguistics (python)',
+  '• discrete math',
+  '• modern algebra',
+  '• ode',
+  '• multivariable calc',
+  '• linear algebra',
+  '• probability',
 ];
 
 const activities = [
-  'girls who code (engagement chair)',
-  'women in computer science (community chair)',
-  'society of women engineers',
-  'columbia organization of rising entrepreneurs',
-  'columbia ballet collaborative',
-  'columbia repertory ballet',
-  'choreography lab',
-  'columbia university ballet ensemble',
+  '• girls who code - engagement chair',
+  '• women in computer science - community chair',
+  '• society of women engineers',
+  '• columbia organization of rising entrepreneurs',
+  '• columbia ballet collaborative',
+  '• columbia repertory ballet',
+  '• choreography lab',
+  '• columbia university ballet ensemble',
 ];
 
 const experience = [
@@ -67,6 +70,12 @@ const experience = [
     organization: 'venuai (remote)',
     period: 'dec 2024 – present',
     description: 'delivered full-stack features with django + react, improved onboarding flows, and optimized llm prompts for matching accuracy',
+  },
+  {
+    role: 'doe suli intern — mathematics & computer science division',
+    organization: 'argonne national laboratory',
+    period: 'may 2025 – aug 2025',
+    description: 'integrated amd rccl into mpich and evaluated hybrid collectives, achieving over 60x speedup in allreduce latency',
   },
   {
     role: 'cs department ta (coms1002/1012)',
@@ -105,7 +114,7 @@ export function About() {
             <span className="text-[var(--color-text-secondary)] tracking-wider">get to know me</span>
           </div>
           <h2 className="text-5xl lg:text-6xl">
-             about
+             introduction
           </h2>
         </motion.div>
 
@@ -125,7 +134,7 @@ export function About() {
                 originally from san diego, ca, i am a sophomore at columbia university pursuing a double major in computer science and mathematics, as well as a minor in dance. growing up, i dedicated myself to competitive dance and professional ballet training, culminating in a gap year dancing with the pittsburgh ballet theatre before matriculating in university.
               </p>
               <p className="text-[var(--color-text-secondary)]">
-                at columbia, i balance rigorous academics with exciting projects and part-time work. i'm integrating amd's gpu-accelerated rccl into mpich with argonne national laboratory, prototyping openshmem collectives on novel hardware with uchicago, and building a workflow-aware llm serving system at columbia. i also ship full-stack features with venuai (backed by y-combinator and harvard) and nori, while remaining deeply engaged in the campus dance community. i’m passionate about merging technical innovation with creativity and pursuing opportunities that emphasize problem-solving, collaboration, and impact.
+                as a national merit scholar at columbia, i balance rigorous academics with exciting projects and part-time work. i'm integrating amd's gpu-accelerated rccl into mpich with argonne national laboratory, prototyping openshmem collectives on novel hardware with uchicago, and building a workflow-aware llm serving system at columbia. i also ship full-stack features with venuai (backed by y-combinator and harvard) and nori, while remaining deeply engaged in the campus dance community. i’m passionate about merging technical innovation with creativity and pursuing opportunities that emphasize problem-solving, collaboration, and impact.
               </p>
             </div>
 
@@ -141,9 +150,10 @@ export function About() {
                   double major: computer science & mathematics</p>
                 <p className="text-[var(--color-text-secondary)]">
                     minor: dance</p>
-                <p className="text-[var(--color-text-secondary)] text-sm">
-                  expected graduation: may 2028 · dean's list
-                </p>
+                <p className="text-[var(--color-text-secondary)]">
+                    expected graduation: may 2028</p>
+                <p className="text-[var(--color-text-secondary)]">
+                   dean's list</p>
                 <div className="text-[var(--color-text-secondary)] text-sm mt-2 space-y-1">
                   <p className="font-semibold text-[var(--color-text-primary)]">coursework</p>
                   <ul className="list-disc pl-6 space-y-1">
@@ -182,11 +192,12 @@ export function About() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               href={resumePdf}
-              download
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full px-8 py-4 bg-[var(--color-accent-blue)] text-white rounded-xl hover:bg-[var(--color-accent-blue)]/80 transition-all duration-300 flex items-center justify-center gap-3"
             >
               <Download className="w-5 h-5" />
-              download resume (pdf)
+              view resume (pdf)
             </motion.a>
           </motion.div>
 
@@ -204,9 +215,12 @@ export function About() {
                 <Briefcase className="w-6 h-6 text-[var(--color-accent-blue)]" />
                 <h4 className="text-xl">experience</h4>
               </div>
-              <div className="space-y-6">
+              <div className="space-y-0">
                 {experience.map((exp, index) => (
-                  <div key={index} className="relative pl-6 border-l-2 border-[var(--color-border)]">
+                  <div
+                    key={index}
+                    className="relative pl-6 py-4 border-l-2 border-[var(--color-border)]"
+                  >
                     <div className="absolute left-0 top-0 w-3 h-3 bg-[var(--color-accent)] rounded-full transform -translate-x-[7px]" />
                     <p className="text-lg">{exp.role}</p>
                     <p className="text-[var(--color-text-secondary)]">{exp.organization}</p>
@@ -223,23 +237,35 @@ export function About() {
                 <Award className="w-6 h-6 text-[var(--color-accent)]" />
                 <h4 className="text-xl"> skills</h4>
               </div>
-              <div
-                className="grid grid-cols-2 gap-4 items-stretch"
-                style={{ gridAutoRows: '1fr' }}
-              >
-                {skills.map((skillGroup) => (
-                  <div
-                    key={skillGroup.category}
-                    className={`h-full flex flex-col ${skillGroup.category === 'ai/ml' ? 'pt-4' : ''}`}
-                  >
-                    <p className="text-[var(--color-accent)] mb-2">{skillGroup.category}</p>
-                    <ul className="text-[var(--color-text-secondary)] text-sm space-y-1">
-                      {skillGroup.items.map((item) => (
-                        <li key={item}>• {item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+
+              <div className="grid grid-cols-2 gap-12 items-start">
+                {/* Left column: programming → systems → tooling */}
+                <div className="space-y-6">
+                  {leftSkills.map((skillGroup) => (
+                    <div key={skillGroup.category} className="flex flex-col">
+                      <p className="text-[var(--color-accent)] mb-2">{skillGroup.category}</p>
+                      <ul className="text-[var(--color-text-secondary)] text-sm space-y-1">
+                        {skillGroup.items.map((item) => (
+                          <li key={item}>• {item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Right column: web → ai/ml → languages */}
+                <div className="space-y-6">
+                  {rightSkills.map((skillGroup) => (
+                    <div key={skillGroup.category} className="flex flex-col">
+                      <p className="text-[var(--color-accent)] mb-2">{skillGroup.category}</p>
+                      <ul className="text-[var(--color-text-secondary)] text-sm space-y-1">
+                        {skillGroup.items.map((item) => (
+                          <li key={item}>• {item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>

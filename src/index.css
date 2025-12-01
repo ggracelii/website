@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&family=Racing+Sans+One&display=swap');
 /*! tailwindcss v4.1.3 | MIT License | https://tailwindcss.com */
 @layer properties {
   @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
@@ -99,6 +100,8 @@
   }
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&family=Racing+Sans+One&display=swap');
+
 @layer base {
   *, :after, :before, ::backdrop {
     box-sizing: border-box;
@@ -106,7 +109,6 @@
     margin: 0;
     padding: 0;
   }
-
   ::file-selector-button {
     box-sizing: border-box;
     border: 0 solid;
@@ -355,9 +357,10 @@
     --color-bg-tertiary: #1a1a1a;
     --color-text-primary: #f5f5f5;
     --color-text-secondary: #a0a0a0;
-    --color-accent: #8b7fda;
-    --color-accent-blue: #6b9bd1;
+    --color-accent: #426BAD;
+    --color-accent-blue: #426BAD;
     --color-border: #2a2a2a;
+    --default-font-family: 'Oxygen', -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
   }
 
   * {
@@ -367,25 +370,23 @@
   body {
     background-color: var(--color-bg-primary);
     color: var(--color-text-primary);
-    font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
+    font-family: 'Oxygen', -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
     line-height: 1.6;
   }
 
-  h1 {
-    letter-spacing: -.02em;
-    font-family: Sora, sans-serif;
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -.01em;
+    font-family: 'Racing Sans One', 'Oxygen', -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
+    font-weight: 400;
     line-height: 1.1;
   }
 
-  h2 {
-    letter-spacing: -.01em;
-    font-family: Sora, sans-serif;
-    line-height: 1.2;
+  .font-display {
+    font-family: 'Racing Sans One', 'Oxygen', -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
   }
 
-  h3, h4, h5, h6 {
-    font-family: Sora, sans-serif;
-    line-height: 1.3;
+  .font-body {
+    font-family: 'Oxygen', -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
   }
 
   p {
@@ -1432,9 +1433,14 @@
   }
 
   @media (width >= 48rem) {
-    .md\:grid-cols-2 {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  @media (min-width: 768px) {
+    .md\:grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+  }
   }
 
   @media (width >= 48rem) {

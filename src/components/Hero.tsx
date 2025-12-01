@@ -44,7 +44,9 @@ export function Hero() {
           >
             building systems.
             <br />
-            <span className="text-[var(--color-accent)]">creating art.</span>
+            <span className="text-[var(--color-accent)] font-display">
+              creating art.
+            </span>
           </motion.h1>
 
           <motion.p
@@ -70,10 +72,11 @@ export function Hero() {
             </button>
             <a
               href={resumePdf}
-              download
-              className="px-10 py-4 bg-transparent border-2 border-[var(--color-text-primary)] text-[var(--color-text-primary)] rounded-lg hover:bg-[var(--color-text-primary)] hover:text-black transition-all duration-300 hover:scale-105"
-            >
-              download resume
+              className="px-10 py-4 bg-[var(--color-text-secondary)] text-black border-2 border-[var(--color-text-secondary)] rounded-lg hover:bg-[var(--color-text-secondary)]/80 transition-all duration-300 hover:scale-105"
+              target="_blank"
+              rel="noopener noreferrer"
+              >
+              view resume
             </a>
           </motion.div>
         </motion.div>

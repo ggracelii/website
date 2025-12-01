@@ -17,17 +17,19 @@ export function Navigation() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="fixed top-0 left-0 right-0 z-50 bg-[var(--color-bg-primary)]/80 backdrop-blur-lg border-b border-[var(--color-border)]"
+      className="fixed top-0 left-0 right-0 z-50 bg-[var(--color-bg-primary)]/80 backdrop-blur-lg border-b border-[var(--color-border)] font-body"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-20 font-body">
           {/* Logo/Name */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="cursor-pointer"
             onClick={() => scrollToSection('Home')}
           >
-            <span className="tracking-tight font-semibold">grace li</span>
+            <span className="tracking-tight font-semibold font-display text-[var(--color-accent)] text-2xl md:text-3xl">
+              grace li
+            </span>
           </motion.div>
 
           {/* Navigation Links */}
@@ -36,7 +38,7 @@ export function Navigation() {
               <button
                 key={link}
                 onClick={() => scrollToSection(link)}
-                className="text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors relative group"
+                className="text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors relative group font-body"
               >
                 {link}
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[var(--color-accent)] group-hover:w-full transition-all duration-300" />
