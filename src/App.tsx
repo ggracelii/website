@@ -12,9 +12,9 @@ export default function App() {
       <Navigation />
       <main>
         <Hero />
-        <Portfolio />
         <About />
         <div id="resume" className="h-0" /> {/* Anchor for Resume navigation */}
+        <Portfolio />
         <Interests />
         <Contact />
       </main>
