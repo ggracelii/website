@@ -5,6 +5,7 @@ import posterPdf from '../assets/LiGrace_Poster.pdf';
 import cyberReport from '../assets/report.pdf';
 import premedImg from '../assets/premed.jpg';
 import celebImg from '../assets/celeb.jpg';
+import websiteImg from '../assets/website.jpg';
 
 interface Project {
   title: string;
@@ -67,6 +68,13 @@ const projects: Project[] = [
     description: 'cleaned data, leveraged singular value decomposition, and wired in a webcam flow to build a playful, user-driven lookalike matcher.',
     image: celebImg,
     github: 'https://github.com/ggracelii/celeb_lookalike',
+  },
+  {
+    title: 'personal website',
+    description:
+      'node + typescript react site (the website you\'re looking at right now) with playful motion, themed sections, and an end-to-end portfolio + contact flow.',
+    image: websiteImg,
+    github: 'https://github.com/ggracelii/website',
   },
 ];
 
