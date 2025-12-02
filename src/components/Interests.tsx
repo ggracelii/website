@@ -86,11 +86,11 @@ export function Interests() {
                       interest.title === 'in the kitchen'
                         ? '55% 30%'
                         : interest.title === 'in the studio'
-                        ? '40% 35%'
+                        ? '50% 90%'
                         : interest.title === 'in the world'
                         ? '50% 70%'
                         : '50% 35%',
-                    transform: interest.title === 'in the world' ? 'scale(1.5)' : 'none',
+                    transform: interest.title === 'in the world' ? 'scale(1.5)' : interest.title === 'in the studio' ? 'scale(1.25)' : 'none',
                   }}
                   loading="lazy"
                 />

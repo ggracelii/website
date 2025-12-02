@@ -5,28 +5,27 @@ import resumePdf from '../assets/GraceLi_Resume.pdf';
 
 const skills = [
   { category: 'programming languages', items: ['java', 'c/c++', 'python', 'javascript/typescript', 'kotlin', 'sql', 'r', 'bash'] },
-  { category: 'web', items: ['react', 'node.js', 'django', 'supabase', 'aws', 'gcp', 'docker', 'postgresql'] },
-  { category: 'systems', items: ['mpi/mpich', 'rccl', 'openshmem', 'hpc', 'distributed systems'] },
-  { category: 'ai/ml', items: ['pytorch', 'tensorflow', 'huggingface', 'sglang', 'prompt engineering'] },
-  { category: 'tooling & quality', items: ['git', 'ci/cd', 'unit testing', 'integration testing'] },
-  { category: 'languages', items: ['english (native)', 'chinese (fluent)', 'spanish (conversational)'] },
+  { category: 'web dev', items: ['react', 'node.js', 'django', 'supabase', 'aws', 'gcp', 'docker', 'postgresql', 'rest api', 'full-stack development'] },
+  { category: 'systems', items: ['mpi/mpich', 'rccl/rocm', 'openshmem', 'high-performance computing', 'distributed systems', 'parallel computing'] },
+  { category: 'ai & ml', items: ['pytorch', 'tensorflow', 'huggingface', 'sglang', 'cuda', 'prompt engineering'] },
+  { category: 'tooling & quality', items: ['git', 'ci/cd', 'unit testing', 'integration testing', 'static bug analysis'] },
+  { category: 'languages', items: ['english (native)', 'chinese (fluent)'] },
 ];
 
 const leftSkills = skills.filter((_, index) => index % 2 === 0);
 const rightSkills = skills.filter((_, index) => index % 2 === 1);
 
 const coursework = [
-  '• advanced swe (java)',
-  '• ai (python)',
+  '• advanced software engineering (java)',
+  '• artificial intelligence (python)',
   '• advanced programming (c)',
-  '• dsa (java)',
+  '• data structures & algorithms (java)',
   '• computational linguistics (python)',
-  '• discrete math',
+  '• discrete mathematics',
   '• modern algebra',
-  '• ode',
-  '• multivariable calc',
-  '• linear algebra',
-  '• probability',
+  '• ordinary differential equations',
+  '• multivariable calculus',
+  '• linear algebra & probability',
 ];
 
 const activities = [
@@ -133,8 +132,11 @@ export function About() {
               <p className="text-[var(--color-text-secondary)] mb-4">
                 originally from san diego, ca, i am a sophomore at columbia university pursuing a double major in computer science and mathematics, as well as a minor in dance. growing up, i dedicated myself to competitive dance and professional ballet training, culminating in a gap year dancing with the pittsburgh ballet theatre before matriculating in university.
               </p>
-              <p className="text-[var(--color-text-secondary)]">
+              <p className="text-[var(--color-text-secondary)] mb-4">
                 as a national merit scholar at columbia, i balance rigorous academics with exciting projects and part-time work. i'm integrating amd's gpu-accelerated rccl into mpich with argonne national laboratory, prototyping openshmem collectives on novel hardware with uchicago, and building a workflow-aware llm serving system at columbia. i also ship full-stack features with venuai (backed by y-combinator and harvard) and nori, while remaining deeply engaged in the campus dance community. i’m passionate about merging technical innovation with creativity and pursuing opportunities that emphasize problem-solving, collaboration, and impact.
+              </p>
+              <p className="text-[var(--color-text-secondary)] mb-4">
+                i'm passionate about building things that matter - i want to feel the impact of my work. beyond academics and tech, i love exploring new places, baking, and dancing (of course!). feel free to reach out — i'd love to connect!
               </p>
             </div>
 
@@ -154,7 +156,7 @@ export function About() {
                     expected graduation: may 2028</p>
                 <p className="text-[var(--color-text-secondary)]">
                    dean's list</p>
-                <div className="text-[var(--color-text-secondary)] text-sm mt-2 space-y-1">
+                <div className="text-[var(--color-text-secondary)] text-sm mt-6 space-y-1">
                   <p className="font-semibold text-[var(--color-text-primary)]">coursework</p>
                   <ul className="list-disc pl-6 space-y-1">
                     {coursework.map((course) => (
@@ -162,7 +164,7 @@ export function About() {
                     ))}
                   </ul>
                 </div>
-                <div className="text-[var(--color-text-secondary)] text-sm mt-3 space-y-1">
+                <div className="text-[var(--color-text-secondary)] text-sm mt-6 space-y-4">
                   <p className="font-semibold text-[var(--color-text-primary)]">activities</p>
                   <ul className="list-disc pl-6 space-y-1">
                     {activities.map((activity) => (
