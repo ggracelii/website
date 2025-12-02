@@ -74,7 +74,7 @@ const projects: Project[] = [
   },
   {
     title: 'celeb lookalike game',
-    description: 'cleaned dataset of 115k+ images by scoring face resemblance and leveraged truncated singular value decomposition for dimensionality reduction. wired in a webcam flow to build an interactive, user-driven lookalike matcher.',
+    description: 'cleaned dataset of 115k+ images by scoring face resemblance and leveraged truncated singular value decomposition for dimensionality reduction. wired in a webcam flow to build an interactive, user-driven lookalike matcher. do i really look like tim gunn?',
     image: celebImg,
     link: celebDemo,
     linkLabel: 'demo',
