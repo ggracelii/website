@@ -13,6 +13,7 @@ import yelpResults from '../assets/yelp.png';
 import updownImg from '../assets/updown.jpg';
 import noriImg from '../assets/nori.png';
 import cortexImg from '../assets/cortex.jpg';
+import cvDemo from '../assets/cv.mp4';
 
 interface Project {
   title: string;
@@ -64,6 +65,13 @@ const projects: Project[] = [
     image: 'https://unsplash.com/photos/Ft_Wn-K5YH8/download?force=true&w=1200',
     link: bibleGraph,
     linkLabel: 'results',
+  },
+  {
+    title: 'face detection using computer vision',
+    description: 'implemented a complete face detection and media processing workflow, integrating webcam capture, video recording, deep learning inference, and multimedia compositing. images and videos are captured directly in the browser using javascript webrtc apis. face detection is performed using opencv\'s deep neural network module with a caffe model face detector. pipeline supports both still image and real time video inference. generates an input/output comparison video using moviepy.',
+    image: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1200&q=80',
+    link: cvDemo,
+    linkLabel: 'demo',
   },
   {
     title: 'medlink',
