@@ -14,6 +14,7 @@ import updownImg from '../assets/updown.jpg';
 import noriImg from '../assets/nori.png';
 import cortexImg from '../assets/cortex.jpg';
 import cvDemo from '../assets/cv.mp4';
+import venuaiImg from '../assets/venuai.png';
 
 interface Project {
   title: string;
@@ -92,6 +93,13 @@ const projects: Project[] = [
     description: 'implementing full-stack features at nori, a startup building a mom-mentorship platform. currently working on a refined search functionality with both syntactic and semantic matching - can\'t share too much but check out the website here!',
     image: noriImg,
     link: 'https://asknori.com',
+    linkLabel: 'visit',
+  },
+  {
+    title: 'venui',
+    description: 'implementing full-stack features and internal cybersecurity access workflows at venuai (y-combinator and harvard backed startup) - can\'t share too much but check out the website here!',
+    image: venuaiImg,
+    link: 'https://www.venu3d.com/',
     linkLabel: 'visit',
   },
   {
