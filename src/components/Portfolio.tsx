@@ -15,7 +15,6 @@ import noriImg from '../assets/nori.png';
 import cortexImg from '../assets/cortex.jpg';
 import cvDemo from '../assets/cv.mp4';
 import venuaiImg from '../assets/venuai.png';
-import venuaiImg from '../assets/venuai.png';
 
 interface Project {
   title: string;

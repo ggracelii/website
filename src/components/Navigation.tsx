@@ -2,7 +2,7 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export function Navigation() {
-  const navLinks = ['home', 'portfolio', 'about', 'interests', 'contact'];
+  const navLinks = ['home', 'about', 'portfolio', 'interests', 'contact'];
 
   const scrollToSection = (section: string) => {
     const id = section.toLowerCase();

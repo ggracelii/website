@@ -100,8 +100,6 @@
   }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&family=Racing+Sans+One&display=swap');
-
 @layer base {
   *, :after, :before, ::backdrop {
     box-sizing: border-box;
