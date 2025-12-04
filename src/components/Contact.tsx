@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { Linkedin } from 'lucide-react';
 
 export function Contact() {
   return (
@@ -29,6 +30,18 @@ export function Contact() {
               rel="noopener noreferrer"
             >
               grace.li2@columbia.edu
+            </a>
+          </p>
+          <p className="text-[var(--color-text-secondary)] text-lg font-body flex items-center justify-center gap-2">
+            or connect with me on
+            <a
+              href="https://www.linkedin.com/in/ggracelii/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors inline-flex"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="w-5 h-5" />
             </a>
           </p>
         </motion.div>
