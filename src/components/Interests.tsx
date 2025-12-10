@@ -86,7 +86,7 @@ export function Interests() {
                       interest.title === 'in the kitchen'
                         ? '55% 30%'
                         : interest.title === 'in the studio'
-                        ? '50% 90%'
+                        ? '59% 80%'
                         : interest.title === 'in the world'
                         ? '50% 70%'
                         : '50% 35%',
